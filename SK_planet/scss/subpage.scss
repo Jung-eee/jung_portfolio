@@ -1,0 +1,187 @@
+body.subpage {
+  main {
+    .container {
+      display: flex;
+      //왼쪽 메뉴
+      #lnb {
+        flex: 230px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        box-sizing: border-box;
+        padding-right: 50px;
+        margin-top: 25px;
+        ul {
+          li {
+            border-bottom: 1px solid $borderColorPrimary;
+            a {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              line-height: 50px;
+              font-size: $fontSizeMid;
+              box-sizing: border-box;
+              transition: 0.5s;
+              &:hover {
+                padding-left: 20px;
+              }
+              &.on {
+                color: white;
+                background: $gbtnColor;
+                padding-left:  20px;
+              }
+            }
+          }
+        }
+       }
+
+       //sub-page title 영역
+       .sub-title {
+         span{
+           position: relative;
+           display: inline-block;
+           line-height: 75px;
+           &:after {
+             content: '';
+             position: absolute;
+             height: 3px;
+             background: $borderColorPrimary;
+             bottom: 0;
+             left: 0;
+             right: 0;
+           }
+         }
+         //:after :befor 사용 underline 추가하시오
+         // line-height:  43px underline 높이 3px: $borderColorPrimary 부모영역 하단에 위치
+         }
+
+
+       // page content 영역
+       .inner {
+         & + .inner {
+           margin-top: 50px;
+           padding-top: 50px;
+           border-top:  1px solid #666;
+         }
+         .box {
+           flex-wrap: wrap;
+         }
+         .items img {
+           margin-bottom: 30px;
+         }
+         .items p {
+           text-align: center;
+           color: #000;
+           line-height: 1.8;
+           font-size: 16px;
+         }
+         .title {
+           margin-bottom: 20px;
+           & + p {
+            text-align: left;
+           }
+           & + ul {
+             color: #333;
+             float: right;
+             border-top: 1px solid #666;
+             border-bottom: 1px solid #666;
+             width: 842px;
+           }
+           .title1 {
+             float: left;
+             font-size: 36px;
+             font-weight: 600;
+           }
+           .data {
+             margin-bottom: 23px;
+             font-size: 20px;
+             color: #f48024;
+             font-weight: 600;
+           }
+         }
+         .cover {
+           padding: 35px 19px 32px;
+           border-top: 1px solid #ccc;
+           height: 50px;
+           &:first-child {
+             border-top: none;
+           }
+           ul {
+            float: left;
+            margin: 0 0 40px 40px;
+           }
+         }
+         .year {
+           float: left;
+           font-weight: bold;
+           font-size: 18px;
+         }
+         .hisory {
+           margin-top: 14px;
+           &:first-child {
+             margin-top: 0;
+           }
+         }
+         .month {
+           font-weight: bold;
+           font-size: 16px;
+           display: inline-block;
+           width: 35px;
+           text-align: right;
+           margin-right: 20px;
+           float: left;
+         }
+         .text {
+           width: 640px;
+           font-size: 14px;
+           color: #666;
+         }
+         .co {
+           margin-top: 40px;
+           text-align: center;
+           font-size: $fontSizeSmall;
+         }
+         .sub-tab {
+           width: 100%;
+           margin-bottom: 150px;
+         }
+         .button-tab {
+           display: block;
+           width: calc(25% - 2px);
+           height: 63px;
+           position: relative;
+           float: left;
+           border-width: 1px 1px 1px 0;
+           border-style: solid;
+           border-color: #dcdddf;
+           &:first-of-type {
+              border-left-width: 1px
+           }
+         }
+         .button {
+           display: block;
+           width: auto;
+           height: auto;
+           line-height: 68px;
+           background-color: transparent;
+           position: absolute;
+           left: -1px;
+           bottom: -1px;
+           right: -1px;
+           top: -1px;
+           font-size: 20px;
+           text-align: center;
+           color: #666;
+           &:hover {
+             background-color: #e51837;
+             color: #fff;
+           }
+         }
+         .sub {
+           background-color: #e51837;
+           color: #fff;
+         }
+       }
+
+      }
+    }
+  }

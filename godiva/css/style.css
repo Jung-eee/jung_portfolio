@@ -1,0 +1,531 @@
+@charset "UTF-8";
+:root {
+  --content-width: 1320px;
+  /*자주 쓰는 css 코드를 하나의 변수로 저장하는 코드 :root라는 태그 안에다가 집어넣어야함
+  변수이름 선언 방법: --두개를 작성후 이름 적고 이름과 이름 사이에 -추가 ex)--content-width: 1320px
+  지금 이 변수를 선언한 건 밑에 코드에 1320px를 width로 사용하기 때문에 만들었음. 사용방법은 29번재 줄 로*/
+}
+/* 공통 UI */
+a.common-btn {
+  display: inline-block;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  font-size: 20px;
+  background-color: #3b1a0f;
+  border-radius: 5px;
+  text-align: center;
+}
+/* 메인배너 */
+#mainbanner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  position: relative;
+}
+
+#mainbanner .inner {
+  width: var(--content-width); /*:root안에 설정한 변수 사용방법: var(선언한 변수 이름) 을 적으면 된다. 지금 width에 선언한 변수를 넣었으니 width: 1320px == width: var(--content-width)임.*/
+  height: 100vh;
+  margin: 0 auto;
+}
+
+#mainbanner .maintitle a {
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  min-height: 254px;
+  top: 116px;
+  left: 0;
+}
+#mainbanner .inner .maintitle a img {
+  height: 810px;
+}
+
+/* 메인 배너 메인 타이틀 */
+#mainbanner .maintext p.maintitle {
+  font-size: 50px;
+  color: #333333;
+  line-height: 60px;
+}
+
+/* 메인배너 서브타이틀 */
+#mainbanner .maintext p.subtitle {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #666666;
+}
+
+#wrap {
+  width: var(--content-width);
+  margin: 0 auto;
+  background-color: #f1f1f1;
+}
+
+/* 상단 고정형 메뉴 */
+/* 상단 고정형 메뉴 -> 메뉴 정렬 */
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  box-sizing: border-box; /* padding: 45px 25px 0; 이 코드로 인한 box-size변동을 잡아주는 코드 */
+  background: rgba(244, 244, 244, 0.5);
+}
+#logo {float: left;}
+#header .h-inner {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 45px 25px 45px;
+}
+#header #logo h1 a img {
+  height: 70px;
+  width: 120px;
+  margin-bottom: 50px;
+}
+
+#header .inner {
+    float: right;
+}
+
+#header .inner > ul {
+  overflow: hidden;
+  float: left;
+}
+
+#header .inner > ul > li{
+  float: left;
+  height: 20px;
+}
+/* 상단 고정형 메뉴 -> 메뉴 간격 수정 */
+#header .inner #gnb {
+  margin-right: 103px; /* 메뉴와 로그인 파트 마진 주는 코드 // 고객센터 <-> 로그인*/
+}
+
+#header .inner #gnb  li {
+  margin-left: 47px; /*  gnb요소들 사이 간격 주는 코드 // 시작하기 <-> 상품보기 <-> 와이즐리 이야기 ...*/
+}
+
+#header .inner #gnb  li:first-child {
+  margin-left: 0; /* 제일 처음 녀석은 간격을 주면 안되니 삭제  */
+}
+
+#header .inner  #login-menu  li {
+  margin-left: 30px; /* 로그인메뉴 요소들 간격 주는 코드 // 로그인 <-> 장바구니 */
+}
+#header .inner  #login-menu> li:first-child {
+  margin-left:0px; /* 이녀석도 처음 녀석에 간격 필요없으니 삭제 */
+}
+
+#header .inner > ul > li > a {
+  line-height: 20px; /* 글자 가운데로 하는 코드 //81번 줄에 height: 20px를 줬기 때문에 line-height:20px로 맞추기*/
+}
+
+#header .inner #login-menu li span.count {
+  display: flex; /* display:flex 는 원래 부모한테 줘야한다. 하지만 지금처럼 span의 0이라는 text가 있으니 이것을 정열시키기 위한 flex선언 이해가 안된다면 니꼬 flex-box 복습*/
+  justify-content: center;
+  align-items: center; /* 0text를 가운데 정렬 */
+  width: 18px;
+  height: 18px; /* 크기 높이를 줘서 원만들기위한 기초 작업*/
+  font-size: 14px;
+  float: right; /* float:right를 안하면 장바구니 밑에 붙어서 보이지 않음 오른쪽으로 빼줘야 함. */
+  color: white;
+  border-radius: 50%; /* 원 만들기 */
+  background-color: #ffc01d; /* 원의 색상 변경*/
+  margin-left: 4px; /*장바구니랑 숫자랑 옆에 사이 두는 코드 // 장바구니 <-> 0*/
+}
+
+/* ------------------------------------ 헤더 끝 -------------------------------------- */
+/* ------------------------------------ 컨텐츠 영역 시작 -------------------------------------- */
+
+/* Section first */
+#container #first div.inner {
+  min-height: 650px;
+  padding-top: 165px;
+  box-sizing: border-box;
+}
+/* section second 부분 처럼 최소높이 밑 패딩을 주어서 컨텐츠와의 간격을 줌. padding이 들어갓으니 box-sizing*/
+
+#container #first .inner{
+  padding-top:250px;
+}
+#container #first .inner ul {
+  overflow: hidden;
+}
+/* #first .inner ul li 를 가로로 정렬시키기 위해 부모에게 overflow: hidden*/
+
+
+#container #first .inner .box-wrap > li {
+  float: left;
+  margin:0 20px;
+  width: calc(25% - 42px);
+}
+/* li float: left로 가로 정렬 후 밑의 border 1px 계산후 width 값 설정 4개로 나누니깐 25% - (양옆 마진 20 + border 2px) */
+
+#container #first .inner .box-wrap > li > .items {
+  border: 1px solid #e3e3e3;
+  padding: 45px 0;
+  min-height: 295px;
+  box-sizing: border-box;
+}
+/* li 안에 있는 div(class="items")에 border선 주고 padding 위아래 45 그리고 padding으로 인한 box-sizing 최소 높이 270px 설정 */
+
+#container #first .inner .box-wrap li .items h3 {
+  font-size: 20px;
+  line-height: 1;
+  color: #252525;
+  margin-bottom: 30px;
+}
+/*폰트 사이즈 조절, line-height: 1 의 의미는 font-size만큼의 높이를 같이 가진다라는 뜻. 밑의 p태그와의 간격을 위해서 margin 추가 */
+
+#container #first .inner .box-wrap li .items p {
+  line-height: 24px;
+  padding: 0 50px;
+  margin-bottom: 32px;
+}
+/*여기서 line-height가 다른 이유는 포토샵으로 재봤더니 그렇게 나옴.. 밑에 img와 간격을 위해서 margin 추가*/
+
+#container #first .inner .box-wrap li .items .img {
+  opacity: 0.7;
+}
+/* img가 너무 찐해서 조금 연하게 해줄 opacity(투명도) 설정*/
+
+/* Section second */
+#container section .inner { /* 이렇게 자세히 적지 않으면 header or mainbanner 영역의 inner에 영향을 줄 수 있음 */
+  width: var(--content-width); /* 제일 위 :root에 선언한 width 크기 선언*/
+  min-height: 650px;
+  margin: 0 auto; /*width를 정해 줬으니 마진으로 가운데 정렬 밥먹기 전에 설명했었음*/
+  text-align: center; /*글자들을 가운데로 옮기기 margin: 0 auto 는 영역을 가운데로 옮기는 것 text-align: center를 해야 글자가 가운데로 옴*/ */
+}
+
+/* Section second */
+ #container section .inner {
+  width: var(--content-width);
+  min-height: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+#container section#fourth {
+  background-image: url("../img1/g9.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100% ;
+  background-position: calc(50% + 500px) center;
+}
+
+#container section#fouth {
+  background-color: #f4f4f4;
+}
+
+#container section#fifth {
+  background-color: #f1f1f1;
+}
+
+
+#container section .inner  h2 {
+  font-size: 45px;
+  line-height: 60px;
+  color: #333333;
+}
+
+
+
+#container section .inner .subtitle {
+  margin-top: 21px;
+  font-size: 24px;
+  line-height: 36px;
+  color: #666666;
+}
+#container section .inner .thumb-img-wrap {
+  text-align: center;
+}
+#container section .inner .thumb-img-wrap ul {
+  display: inline-block;
+}
+#container section .inner .thumb-img-wrap ul:nth-child(1) {
+  margin-top: 75px;
+}
+#container section .inner .thumb-img-wrap ul:nth-child(2) {
+  margin-top: 80px;
+}
+#container section .inner .thumb-img-wrap ul li {
+  display: inline-block;
+  float: left;
+  width: 16.666%;
+}
+#container section .inner .thumb-img-wrap ul li img {
+  width: 100%;
+}
+/* section 3번 style */
+#container section .inner .box {
+  float: left;
+  width: 50%;
+  min-height: 650px;
+}
+#container section .inner .box.img {
+  background-size: cover;
+}
+#container section .inner .box .text-box {
+  display: inline-block;
+  text-align: left;
+  margin-top: 165px;
+}
+#container section .inner .box .text-box a.common-btn {
+  margin-top: 43px;
+}
+
+
+#container section#fifth .inner .box .text-box h2 {
+  color: black;
+  font-size: 45px;
+}
+#container section#fifth .inner .box .text-box h2 .light-text {
+  font-weight: 100;
+}
+#container section#fifth .inner .box.img {
+  background-image: url("../img1/cake.jpg");
+}
+#container section#fifth .inner .box .text-box {
+  margin-top: 227px;
+}
+
+#container #six {
+  min-height: 800px;
+  margin-left: 0;
+}
+#container #six .box h2 {
+  font-size: 30px;
+  text-align: center;
+  color: #333333;
+  margin-top: 40px;
+}
+#container #six .box .subtitle {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+#container #six .inner {
+ height: 750px;
+}
+#container #six .inner .box {
+  text-align: center;
+}
+#container #six .inner .box.img {
+ width: 1320px;
+ overflow: hidden;
+ margin:35px;
+}
+#container #six .inner .box.img .jh_cake {
+ float: left;
+ background-image: url('../img1/jh.jpg');
+ background-size: cover;
+ background-position: center center;
+ box-sizing: border-box;
+ width: 400px;
+ height: 611px;
+ margin-top: 20px;
+}
+#container #six .inner .box.img .jh_cake  a > .text {
+  opacity: 0;
+  transition: 0.5s;
+  top: 30%;
+  position:relative;
+
+}
+#container #six .inner .box.img .jh_cake a:hover > .text {
+  opacity: 1;
+  top: 0;
+}
+#container #six .inner .box.img a {
+  display: block;
+}
+#container #six .inner .box.img .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+}
+#container #six .inner .box.img .jh_cake a > .text,
+#container #six .inner .box.img .jh_cake a {
+  height: 100%;
+}
+#container #six .inner .box.img .choco .chocolate a > .text {
+  opacity: 0;
+  transition: 0.3s;
+  top: 30%;
+  position:relative;
+
+}
+#container #six .inner .box.img .choco .chocolate a:hover > .text {
+  opacity: 1;
+  top: 0;
+}
+#container #six .inner .box.img .choco .chocolate a > .text,
+#container #six .inner .box.img .choco .chocolate a{
+  height: 100%;
+}
+#container #six .inner .box.img .jh_cake .text:hover,
+#container #six .inner .box.img .choco .chocolate a > .text:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+#container #six .inner .box.img .choco{
+ float: right;
+ overflow: hidden;
+ width: calc(100% - 410px);
+ margin-top: 20px;
+}
+#container #six .inner .box.img .choco  .chocolate{
+ float: left;
+ width: 220px;
+ height: 295px;
+ margin-right: 2px;
+}
+
+
+#six .inner .box.img .choco:nth-of-type(2) .chocolate:nth-child(1){
+  background-image: url('../img1/g1.jpg');
+  background-size: cover;
+}
+#six .inner .box.img .choco:nth-of-type(2) .chocolate:nth-child(2){
+  background-image: url('../img1/g2.jpg');
+  background-size: cover;
+}
+#six .inner .box.img .choco:nth-of-type(2) .chocolate:nth-child(3){
+  background-image: url('../img1/g3.jpg');
+  background-size: cover;
+}
+#six .inner .box.img .choco:nth-of-type(2) .chocolate:nth-child(4){
+  background-image: url('../img1/g4.jpg');
+  background-size: cover;
+}
+#six .inner .box.img .choco:nth-of-type(3) .chocolate:nth-child(1){
+  background-image: url('../img1/g5.jpg');
+  background-size: cover;
+}
+#six .inner .box.img .choco:nth-of-type(3) .chocolate:nth-child(2){
+  background-image: url('../img1/g6.jpg');
+  background-size: cover;
+}
+#six .inner .box.img .choco:nth-of-type(3) .chocolate:nth-child(3){
+  background-image: url('../img1/g7.jpg');
+  background-size: cover;
+}
+#six .inner .box.img .choco:nth-of-type(3) .chocolate:nth-child(4){
+  background-image: url('../img1/g8.jpg');
+  background-size: cover;
+}
+
+#six .inner .box.img .choco .chocolate{
+  background-position: center center;
+}
+
+#six .inner .box.img a > .text > span{
+  padding: 2px 25px 25px 25px;
+}
+
+
+
+/* 하단영역 */
+#footer {
+  background: #3b1a0f;;
+}
+#footer .inner {
+  position: relative;
+  width: var(--content-width);
+  min-height: 250px;
+  margin: auto; 0;
+  overflow: hidden;
+  box-sizing: border-box;
+
+}
+#footer .inner .f-box {
+  overflow: hidden;
+  height: 220px;
+  width: 100%;
+  float: left;
+  padding-top: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bbbbbb;
+}
+#footer .inner .f-box .logo {
+display: inline-block;
+width: 20%;
+}
+#footer .inner .f-box .logo a > img {
+margin-left: 50px;
+}
+#footer .inner .f-box .text {
+  width: 20%;
+}
+
+#footer .inner .f-box > * {
+  float: left;
+}
+
+#footer .inner .f-box ul {
+  overflow: hidden;
+  height: 250px;
+}
+#footer .inner .f-box ul li {
+  height: 20px;
+  /* margin-left: 40px; */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+#footer .inner .f-box ul li:first-child{
+  line-height: 20px;
+  margin-left: 0;
+  color: #ceb372
+}
+#fooer .inner .f-box ul li a {
+  float: left;
+
+}
+#footer .inner .f-box .sitemap {
+  display: flex;
+  flex-direction: column;
+}
+#footer .inner .f-box  ul li a {
+  color: white;
+  font-size: 12px;
+}
+#footer .inner .f-box .tel {
+ margin-top: 17px;
+ font-weight: 700;
+ line-height: 1;
+ color: #ceb372
+}
+#footer .inner .f-box .tel a {
+  color: #ceb372
+}
+#footer .inner .copyright {
+  line-height: 16px;
+  margin-top: 23px;
+  font-size: 12px;
+  color: #777777;
+}
+#familysite {
+   position: absolute;   /*위에 relative 써놔서 float 보다 absolute로 할려는거 같은데! 근데 이렇게 해도 좋아요*/
+   width:190px;
+   height: 30px;
+   padding: 0 30px 0 15px;
+   top: 40px;
+   right: 20px;
+   border: 1px solid #d1d1d1;
+   box-sizing: border-box;
+   appearance : none;
+   outline: none;
+   background: url('../img/select_box_arrow.png');
+   background-repeat: no-repeat;
+   background-position: calc(100% - 11px) center;
+
+}
+#familysite:focus {
+  border: 1px solid #d9d9d9;
+
+}

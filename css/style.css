@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+input {
+  border: 0;
+  border-bottom: 1.5px solid navy;
+  background-color: transparent;
+  caret-color: white;
+  color: white;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+input::placeholder {
+  color: white;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+.wrap {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+#login-form.hidden {
+  display: none;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-form input[type="text"] {
+  margin-bottom: 10px;
+}
+
+#login-form input[type="submit"] {
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+#todo-form input {
+  width: 400px;
+  padding: 15px 80px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+#greeting {
+  font-family: "Grape Nuts", cursive;
+  font-weight: bold;
+  font-size: 30px;
+  color: ivory;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  /* visibility: hidden; */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#quote {
+  position: absolute;
+  bottom: 20px;
+  z-index: 1;
+  font-family: "Grape Nuts", cursive;
+  font-size: 25px;
+  font-weight: bold;
+  color: khaki;
+}
+#todo-form {
+  margin-top: 30px;
+}
+#weather {
+  color: navy;
+  font-weight: bold;
+  font-family: "Grape Nuts", cursive;
+  margin-top: 20px;
+  font-size: 20px;
+}
+#clock {
+  font-family: "Grape Nuts", cursive;
+  font-weight: bold;
+  font-size: 60px;
+  color: ivory;
+}
+
+#todo-list li span {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#todo-list li button {
+  background-color: transparent;
+  border: 0;
+  margin-left: 5px;
+  color: tomato;
+  font-weight: bold;
+  font-size: 16px;
+}

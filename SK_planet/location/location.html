@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewprot" content="width=device-width, initial-scale=1, maximun-scale=1, minmun-scale=1, user-scalable=no">
+    <title>xwood</title>
+    <link rel="stylesheet" href="../css/style.min.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+  </head>
+  <body class="subpage">
+    <div id="wrap">
+      <header id="header">
+        <!-- 로고 -->
+        <h1 id="top-logo">
+          <a href="../index.html">XWOOD</a>
+        </h1>
+        <!-- 메인메뉴 -->
+        <nav id="top-nav">
+          <ul>
+            <li>
+              <a href="../company/introduce.html">Company</a>
+              <ul class="sub-menu">
+                <li><a href="../company/introduce.html">Introduce</a></li>
+                <li><a href="../company/ci.html">CI</a></li>
+                <li><a href="../company/history.html">History</a></li>
+              </ul>
+            </li>
+            <li><a href="../product/product.html">Product</a></li>
+            <li><a href="../gallery/gallery.html">Gallery</a></li>
+            <li>
+              <a href="../community/notice.html">Community</a>
+              <ul class="sub-menu">
+                <li><a href="../community/notice.html">Notice</a></li>
+                <li><a href="../community/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li><a href="../location/location.html">Location</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <!-- 메인배너 -->
+        <div class="container">
+          <!-- 왼쪽메뉴 -->
+          <aside id="lnb">
+            <ul>
+              <li><a href="../locations/location.html">Location</a></li>
+            </ul>
+          </aside>
+          <div class="content">
+            <h2 class="sub-title"><span>Location</span></h2>
+            <div class="inner">
+              <div id="map" style="width:1000px; height:350px; margin: 50px auto 0;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer id="footer">
+          <!-- footer 상단 역역 -->
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+                <div class="column footer-logo">
+                  <!-- footer logo -->
+                  <h3>Logo</h3>
+                </div>
+                <div class="column">
+                  <!-- map -->
+                  <h4>site map</h4>
+                  <ul>
+                    <li><a href="../company/introduce.html">Company</a></li>
+                    <li><a href="../product/product.html">Product</a></li>
+                    <li><a href="../gallery/gallery.html">Gallery</a></li>
+                    <li><a href="../community/notice.html">Community</a></li>
+                    <li><a href="../location/location.html">Location</a></li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <!-- contact us  -->
+                  <h4>contact us</h4>
+                  <p>
+                    A108 Adam street<br>
+                    New York, NY 535022<br>
+                    United states<br>
+                    <strong>Phone :</strong><a href="tel:+82-10-0000-0000">+82-010-0000-0000</a><br>
+                    <strong>Email :</strong><a href="mailto:mymail@naver.com">mymail@naver.com</a>
+                  </p>
+                </div>
+                <div class="column news">
+                  <!-- news -->
+                  <h4>news</h4>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi nostrum ducimus earum ipsa recusandae repellendus qui, dolorum maiores rem illum autem sapiente quam, dolore eveniet rerum perspiciatis excepturi eum consectetur!</p>
+                  <form>
+                    <input type="text" name="search"><input type="submit" value="search">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- footer 하단 영역 -->
+          <div class="container">
+            <div class="copyright">
+              &copy;copyright <strong>Mypage</strong> .All Rights Reserved
+            </div>
+            <div class="credits">
+              Designed by <a href="mailto:aaa@naver.com">Myself</a>
+            </div>
+          </div>
+      </footer>
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5cdf3619a8536ec985de2ce8e35f9931"></script>
+      <script>
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+          mapOption = {
+              center: new kakao.maps.LatLng(35.8661, 128.5938), // 지도의 중심좌표
+              level: 3 // 지도의 확대 레벨
+          };
+
+      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+      // 마커가 표시될 위치입니다
+      var markerPosition  = new kakao.maps.LatLng(35.8661, 128.5938 );
+
+
+      // 마커를 생성합니다
+      var marker = new kakao.maps.Marker({
+          position: markerPosition
+      });
+
+      var infowindow = new kakao.maps.InfoWindow({
+       content: '<div class="map-info-window" >코리아IT학원</div>'
+      });
+      infowindow.open(map, marker);
+
+      // 마커가 지도 위에 표시되도록 설정합니다
+      marker.setMap(map);
+
+      // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+      // marker.setMap(null);
+      </script>
+  </body>
+</html>
