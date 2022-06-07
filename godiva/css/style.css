@@ -71,6 +71,7 @@ a.common-btn {
   width: 100%;
   top: 0;
   left: 0;
+  height: 116px;
   overflow: hidden;
   box-sizing: border-box; /* padding: 45px 25px 0; 이 코드로 인한 box-size변동을 잡아주는 코드 */
   background: rgba(244, 244, 244, 0.5);
