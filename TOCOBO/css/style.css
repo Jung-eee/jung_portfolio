@@ -21,9 +21,7 @@ ul, li {
 
 #mainbanner .bn_img{
   position: relative;
-
 }
-
 #mainbanner .inner .slider {
   display: flex;
   flex-wrap: nowrap;

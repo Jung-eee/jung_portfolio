@@ -11,6 +11,8 @@ $mainMinHeight: calc(100vh - (#{$hederHeight} + #{$footerHeight} + 51px));
   #header {
     position: relative;
     height: $hederHeight;
+    margin-bottom: 10px;
+    
     //로고 영역
     #top-logo {
       position: relative;
